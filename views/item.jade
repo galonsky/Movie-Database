@@ -2,11 +2,8 @@ tr
   td #{item.value._id}
   td #{item.value.year}
   td
-    - if(item.value.actors.length == 1)
-      #{item.value.actors[0]}
-    - else if(item.value.actors.length > 1)
-      - for (var i = 0; i < item.value.actors.length - 1; i = i + 1)
-        #{item.value.actors[i]}, 
-      #{item.value.actors[i]}
+    - for (var i = 0; i < item.value.actors.length - 1; i = i + 1)
+      #{item.value.actors[i]}, 
+    #{item.value.actors[i]}
   td
     a(href='/delete/' + item.value._id + '/' + item.value._rev) Delete
