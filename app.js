@@ -43,7 +43,7 @@ app.post('/', function(req, httpResponse)
 
 app.get('/delete/:id/:rev', function(req, httpResponse)
 {
-    var id = req.params.id;
+    var id = encodeURIComponent(req.params.id);
     var rev = req.params.rev;
     
     db.delete(id, rev, function(err, res)
