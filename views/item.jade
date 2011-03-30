@@ -1,0 +1,8 @@
+tr
+  td #{item.value._id}
+  td #{item.value.year}
+  td
+    - each actor in item.value.actors
+      #{actor},
+  td
+    a(href='/delete/' + item.value._id + '/' + item.value._rev) Delete

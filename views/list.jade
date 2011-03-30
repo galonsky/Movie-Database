@@ -1,0 +1,22 @@
+h1 Movie Database
+table(border='1')
+  tr
+    th Name
+    th Year
+    th Actors
+    th Delete
+  !=partial('item', {collection: items})
+br
+br
+h2 Add Another Movie
+form(action='/', method='POST')
+  | <strong>Name:</strong>
+  input(type='text', id='name', name='name')
+  br
+  | <strong>Year:</strong>
+  input(type='text', id='year', name='year')
+  br
+  | <strong>Actors:</strong>
+  input(type='text', id='actors', name='actors')
+  p
+    input(type='submit', value='Add Movie')
